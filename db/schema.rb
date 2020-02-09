@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_01_30_013628) do
     t.integer "quantity"
     t.integer "rating"
     t.string "description"
+    t.string "ingredients"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_01_30_013628) do
     t.string "name"
     t.string "username"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "bio"
     t.string "company_name"
     t.boolean "seller"

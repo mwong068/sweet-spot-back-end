@@ -9,7 +9,7 @@ class ChargesController < ApplicationController
         order = Order.find(params[:orderId])
         amount = (order.total * 100).to_i
         customer = order.user.id
-        byebug
+        # byebug
         charge = Stripe::Charge.create(
             # :customer => customer,
             :amount => amount,

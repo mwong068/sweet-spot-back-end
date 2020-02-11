@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
 
     def update
         Order.update(order_params)
+        render json: OrderSerializer.new(@order)
     end
 
     def destroy
@@ -30,7 +31,7 @@ class OrdersController < ApplicationController
     private
 
     def find_order
-        order = Order.find(params[:id])
+        @order = Order.find(params[:id])
     end
 
     def order_params

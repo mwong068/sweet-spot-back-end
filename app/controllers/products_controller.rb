@@ -11,17 +11,25 @@ class ProductsController < ApplicationController
         render json: ProductSerializer.new(product)
     end
 
-    # def new
-    #     user = User.new
-    # end
+    def new
+        user = User.new
+    end
     
-    # def create
-    # end
+    def create
+        @product = Product.create(product_params)
+        render json: ProductSerializer.new(@product)
+    end
 
     # def update
     # end
 
     # def destroy
     # end
+
+    private
+
+    def product_params
+        params.require(:product).permit(:name, :price, :quantity, :rating, :description, :ingredients, :image)
+    end
 
 end

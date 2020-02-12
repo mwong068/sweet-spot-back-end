@@ -1,4 +1,4 @@
 class FavoriteReviewSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :users, :products
+  attributes :user, :product, :favorited, :review
 end

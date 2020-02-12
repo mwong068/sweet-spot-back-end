@@ -1,5 +1,5 @@
 class FavoriteReviewsController < ApplicationController
-    before_action :find_favorite_reviews, only: [:show, :create, :update, :destroy]
+    before_action :find_favorite_reviews, only: [:show, :update, :destroy]
 
     def index
         favorite_reviews = FavoriteReview.all
@@ -12,11 +12,12 @@ class FavoriteReviewsController < ApplicationController
     end
 
     def new
-        FavoriteReview = FavoriteReview.new
+        favorite_review = FavoriteReview.new
     end
 
     def create
-        FavoriteReview.create(favorite_review_params)
+        @favorite_review = FavoriteReview.find_or_create_by(favorite_review_params)
+        render json: FavoriteReviewSerializer.new(@favorite_review)
     end
 
     def update

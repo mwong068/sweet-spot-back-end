@@ -1,8 +1,8 @@
 class User < ApplicationRecord
     has_many :orders
     has_many :products, through: :orders
-    # has_many :favorite_reviews
-    # has_many :products, through: :favorite_reviews
+    has_many :favorite_reviews
+    has_many :products, through: :favorite_reviews
     
     has_secure_password
     validates :name, presence: true

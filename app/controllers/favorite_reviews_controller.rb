@@ -25,12 +25,15 @@ class FavoriteReviewsController < ApplicationController
     end
 
     def destroy
+        @favorite_review.delete
+        favorite_reviews = FavoriteReview.all
+        render json: FavoriteReviewSerializer.new(favorite_reviews)
     end
 
     private
 
     def find_favorite_reviews
-        favorite_review = FavoriteReview.find(params[:id])
+        @favorite_review = FavoriteReview.find(params[:id])
     end
 
     def favorite_review_params

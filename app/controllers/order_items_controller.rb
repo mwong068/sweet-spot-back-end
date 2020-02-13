@@ -16,12 +16,13 @@ class OrderItemsController < ApplicationController
     end
 
     def create
-       @order_item = OrderItem.create(order_item_params)
+       @order_item = OrderItem.find_or_create_by(order_item_params)
         render json: OrderItemSerializer.new(@order_item)
     end
 
     def update
         OrderItem.update(order_item_params)
+        render json: OrderItemSerializer.new(@order_item)
     end
 
     def destroy

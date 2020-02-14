@@ -21,7 +21,8 @@ class FavoriteReviewsController < ApplicationController
     end
 
     def update
-        FavoriteReview.update(favorite_review_params)
+        @favorite_review = FavoriteReview.update(favorite_review_params)
+        render json: FavoriteReviewSerializer.new(@favorite_review)
     end
 
     def destroy

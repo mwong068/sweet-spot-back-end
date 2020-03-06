@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     end
 
     def update
-        Order.update(order_params)
+        @order.update(order_params)
         render json: OrderSerializer.new(@order)
     end
 

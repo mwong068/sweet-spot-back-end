@@ -30,7 +30,7 @@ This repository contains the database and backend structure necessary to correct
 
 ## Set up
 
-## Prerequisites
+### Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
@@ -74,7 +74,7 @@ touch .env
 
 Correctly set up the .env file following the format below:
 ```bash
-STRIPE_SECRET_KEY=(place key in here without parentheses)
+STRIPE_SECRET_KEY=(place key here without parentheses)
 ```
 
 See [Stripe Account Settings](#stripe-account-settings) to locate the necessary environment variables.
